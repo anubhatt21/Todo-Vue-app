@@ -4,7 +4,10 @@
  <h3>Today's tasks are: <br>
  <ol>
    <li v-for="item in taskitems"> {{ item }} <input type="checkbox" v-model="toggle"></li> 
-   <input type="text" v-model="task3">
+   <input type="text" v-model="taskitems[2]">
  </ol>
 </h3>
+<p> Add a Task </p>
+<input type="text" v-model="newTask" required>
+<button v-on:click="addTask()"> Add Task</button>
 </div>

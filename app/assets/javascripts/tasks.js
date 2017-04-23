@@ -8,7 +8,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         'Vaccum Living Room',
         'Complete HW',
         'Yada yada'
-      ]
+      ],
+      newTask: ""
+    }, 
+    methods: {
+      addTask: function() {
+        if (this.newTask !== "") {
+        this.taskitems.push(this.newTask);
+        this.newTask = "";
+      }
     }
   });
 });
