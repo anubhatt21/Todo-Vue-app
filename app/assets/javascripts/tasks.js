@@ -14,8 +14,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     methods: {
       addTask: function() {
         if (this.newTask !== "") {
-        this.taskitems.push(this.newTask);
-        this.newTask = "";
+          this.taskitems.push(this.newTask);
+          this.newTask = "";
+        }
+      }, 
+      deleteTask: function(inputItem) {
+      // console.log("deleting item", inputItem);
+        var index = this.taskitems.indexOf(inputItem);
+        this.taskitems.splice(index, 1);
       }
     }
   });

@@ -3,7 +3,7 @@
  <p> {{ message }} </p>
  <h3>Today's tasks are: <br>
  <ol>
-   <li v-for="item in taskitems"> {{ item }} <input type="checkbox" v-model="toggle"></li> 
+   <li v-for="item in taskitems" v-on:click="deleteTask()"> {{ item }} <input type="checkbox" v-model="toggle"></li> 
    <input type="text" v-model="taskitems[2]">
  </ol>
 </h3>
