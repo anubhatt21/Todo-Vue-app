@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     el: '#app',
     data: {
       message: 'Hello Anu!',
-      task1: 'Vaccum Living Room',
-      task2: 'Complete HW',
-      task3: 'Yada yada'
+      taskitems: [
+        'Vaccum Living Room',
+        'Complete HW',
+        'Yada yada'
+      ]
     }
   });
 });
