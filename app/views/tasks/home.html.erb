@@ -2,9 +2,11 @@
 <div id="app">
  <p> {{ message }} </p>
  <h3>Today's tasks are: <br>
- {{ task1 }} <br>
- {{ task2 }} <br>
- {{ task3 }} <br>
- <input type="text" v-model="task3">
+ <ol>
+   <li>{{ task1 }} </li> <input type="checkbox" v-model="toggle">
+   <li>{{ task2 }} </li> <input type="checkbox" v-model="toggle">
+   <li>{{ task3 }} </li> <input type="checkbox" v-model="toggle">
+   <input type="text" v-model="task3">
+ </ol>
 </h3>
 </div>
