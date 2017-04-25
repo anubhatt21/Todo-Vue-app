@@ -5,20 +5,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     data: {
       message: 'Hello Anu!',
       taskitems: [
-        'Vaccum Living Room',
-        'Complete HW',
-        'Yada yada'
+        {task: 'Vaccum Living Room', completed: false},
+        {task: 'Complete HW', completed: false},
+        {task: 'Yada yada', completed: false}
       ],
-      newTask: ""
-    }, 
+      newItemTask: "",
+      newItemCompleted: ""
+    },
     methods: {
-      addTask: function() {
-        if (this.newTask !== "") {
-          this.taskitems.push(this.newTask);
-          this.newTask = "";
-        }
+      toggleStatus: function(inputItem) {
+        inputItem.completed = !inputItem.completed;
+      },
+      addItem: function() {
+        this.taskitems.push({task: this.newItemTask, completed: false});
+        this.newItemTask = "";
+        this.newItemCompleted = "";
       }, 
-      deleteTask: function(inputItem) {
+      deleteItem: function(inputItem) {
       // console.log("deleting item", inputItem);
         var index = this.taskitems.indexOf(inputItem);
         this.taskitems.splice(index, 1);

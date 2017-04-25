@@ -1,13 +1,20 @@
 <h1> My Todo App </h1>
 <div id="app">
  <p> {{ message }} </p>
- <h3>Today's tasks are: <br>
- <ol>
-   <li v-for="item in taskitems" v-on:click="deleteTask()"> {{ item }} <input type="checkbox" v-model="toggle"></li> 
-   <input type="text" v-model="taskitems[2]">
- </ol>
-</h3>
-<p> Add a Task </p>
-<input type="text" v-model="newTask" required>
-<button v-on:click="addTask()"> Add Task</button>
+
+<h4>Total tasks : {{ taskitems.length }}</h4>
+ 
+<p>Today's tasks are: </p>
+  <div v-for="item in taskitems">
+   <h4 v-on:click="toggleStatus(item)">{{ item.task }} </h4>
+   <p v-bind:class="{strike: item.completed}">{{ item.completed }} </p>
+   <button v-on:click="deleteItem(item)">Delete</button>
+</div> 
+
+<h3> Add a Task </h3>
+<div>
+Task: <input type="text" v-model="newItemTask">
+Status: <input type="text" v-model="newItemCompleted">
+<button v-on:click="addItem()"> Add Task</button>
+</div>
 </div>
